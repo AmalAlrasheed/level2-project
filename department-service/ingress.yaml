@@ -9,7 +9,7 @@ spec:
     - host:
       http:
         paths:
-          - path: /
+          - path: /department
             backend:
               serviceName: department-service
               servicePort: 80
