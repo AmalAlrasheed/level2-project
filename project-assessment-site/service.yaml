@@ -4,7 +4,7 @@ metadata:
   name: project-assessment-site
   namespace: test
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: project-assessment-site
   ports:
