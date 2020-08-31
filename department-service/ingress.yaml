@@ -11,5 +11,5 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: project-assessment-site
+              serviceName: department-service
               servicePort: 80
