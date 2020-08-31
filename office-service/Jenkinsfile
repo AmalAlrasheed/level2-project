@@ -36,7 +36,7 @@ spec:
     CREDS = credentials('rho-team-docker')
     DOCKER_NAMESPACE = 'alhanouf1'
     SERVICE_NAME = 'office-service'
-    TOKEN=credentials('06d1d01b-54b3-4121-a7e9-5bbe4fb2bb56')
+    TOKEN=credentials('1be568b2-5054-466a-a48d-14dd2d1b9945')
   }
   stages {
       stage("Build") {
@@ -62,11 +62,10 @@ spec:
       stage("Deploy") {
           steps {
               container('kubectl') {
-                  sh '''
+                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test get all
-                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
-                      kubectl --token=$TOKEN -n test get all
+                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml 
+                      kubectl --token=$TOKEN -n test apply -f ingress.yaml
                   '''
               }
           }
