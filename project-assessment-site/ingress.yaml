@@ -6,11 +6,12 @@ metadata:
    annotations:
       ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-   rules:
-   - http:
-      paths:
-      - path: /
-        backend:
-           serviceName: project-assessment-site
-           servicePort: 80
+  rules:
+    - host:
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: project-assessment-site
+              servicePort: 80
 
