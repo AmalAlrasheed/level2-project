@@ -1,15 +1,15 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-   name: test
-   namespace: test
-   annotations:
-      ingress.kubernetes.io/ssl-redirect: "false"
+  name: test
+  namespace: test
+
 spec:
-   rules:
-   - http:
-      paths:
-      - path: /department
-        backend:
-           serviceName: department-service
-           servicePort: 80
+  rules:
+    - host:
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: project-assessment-site
+              servicePort: 80
